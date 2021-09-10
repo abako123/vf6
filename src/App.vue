@@ -1,13 +1,10 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
       <site-title :title="title"></site-title>
       <v-spacer/>
+      <v-btn icon @click="save"><v-icon>mdi-check</v-icon></v-btn>
     </v-app-bar>
 
     <v-navigation-drawer app v-model="drawer">
@@ -39,6 +36,15 @@ export default {
     }
   },
   mounted () {
+    console.log(this.$firebase)
+  },
+  methods: {
+    save () {
+      console.log('save@@@')
+      this.$firebase.database().ref().child('abcd').child('abcd').child('abcd').set({
+        title: 'abcd', text: 'tttttt'
+      })
+    }
   }
 }
 </script>
