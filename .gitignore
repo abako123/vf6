@@ -24,4 +24,4 @@ pnpm-debug.log*
 
 # firebase
 .firebaserc
-firebaseCinfig.js
+firebaseConfig.js
